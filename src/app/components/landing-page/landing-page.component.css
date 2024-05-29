@@ -1,0 +1,9 @@
+
+/* Add custom styles as needed */
+
+/* Responsive styling for the step cards */
+@media (max-width: 768px) {
+    .md\:grid-cols-3 {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}

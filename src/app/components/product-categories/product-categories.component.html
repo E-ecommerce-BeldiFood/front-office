@@ -1,8 +1,32 @@
-<!-- category.component.html -->
-<!--
-<div class="grid grid-cols-3 gap-4">
-    <div *ngFor="let category of categories" class="border border-gray-300 rounded p-4">
-      {{ category }}
+<!-- src/app/product-categories/product-categories.component.html -->
+<div class="container mx-auto px-4 py-8">
+  <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <div *ngFor="let category of categories" class="flex justify-center">
+      <div class="card bg-white shadow-lg rounded-full overflow-hidden transform transition duration-300 hover:scale-105">
+        <div class="overflow-hidden rounded-full">
+          <img [src]="category.imageUrl" alt="{{ category.name }}" class="w-full h-full object-cover transition duration-300 transform hover:scale-110">
+        </div>
+        <div class="card-body p-4 text-center bg-gray-200">
+          <h5 class="card-title text-lg font-semibold mb-2">{{ category.name }}</h5>
+        </div>
+      </div>
     </div>
   </div>
+</div>
+
+<!-- src/app/product-categories/product-categories.component.html 
+<div class="container mx-auto px-4 py-8">
+  <swiper [config]="swiperConfig">
+    <div *ngFor="let category of categories" class="swiper-slide flex justify-center">
+      <div class="card bg-white shadow-lg rounded-full overflow-hidden transform transition duration-300 hover:scale-105">
+        <div class="overflow-hidden rounded-full">
+          <img [src]="category.imageUrl" alt="{{ category.name }}" class="w-full h-full object-cover transition duration-300 transform hover:scale-110">
+        </div>
+        <div class="card-body p-4 text-center bg-gray-200">
+          <h5 class="card-title text-lg font-semibold mb-2">{{ category.name }}</h5>
+        </div>
+      </div>
+    </div>
+  </swiper>
+</div>
 -->

@@ -5,6 +5,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 
 /*children: [{
     
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path:'Register', component: RegisterComponent},
   {path:'ResetPassword', component: ResetPasswordComponent },
   {path:'Profile', component: ProfileComponent},
-
+  {path:'Cart', component: ShoppingCartComponent},
 ];
 
 @NgModule({

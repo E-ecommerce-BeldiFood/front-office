@@ -27,6 +27,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { AuthInterceptor } from './interceptors/auth-interceptor.interceptor.spec';
 import { UserServiceService } from './services/user-service.service';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 
@@ -36,7 +39,6 @@ import { UserServiceService } from './services/user-service.service';
     AppComponent,
     LandingPageComponent,
     NavbarComponent,
-    ProductListComponent,
     ProductDetailsComponent,
     ShoppingCartComponent,
     CheckoutComponent,
@@ -46,12 +48,13 @@ import { UserServiceService } from './services/user-service.service';
     CapitalizePipe,
     HighlightDirective,
     ShoppingCartDropdownComponent,
-    ProductCategoriesComponent,
     LoginComponent,
     RegisterComponent,
     ResetPasswordComponent,
     FooterComponent,
-    ProfileComponent
+    ProfileComponent,
+    ProductCategoriesComponent,
+    ProductListComponent
     ],
   imports: [
     BrowserModule,
@@ -61,7 +64,9 @@ import { UserServiceService } from './services/user-service.service';
     HttpClientModule,
     FormsModule,
     ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbModule,
+    
 
   ],
   providers: [
