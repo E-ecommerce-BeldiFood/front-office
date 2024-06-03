@@ -1,3 +1,15 @@
+/* Add hover effect */
+a:hover svg {
+    fill: white;
+}
+
+/* Add clicked effect */
+a.clicked svg {
+    fill: white; /* Change the color to your desired style */
+}
+
+
+
 .product-list {
     list-style: none;
     padding: 0;

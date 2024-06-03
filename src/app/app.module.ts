@@ -28,6 +28,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { AuthInterceptor } from './interceptors/auth-interceptor.interceptor.spec';
 import { UserServiceService } from './services/user-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { MoreFoodComponent } from './components/more-food/more-food.component';
 
 
 
@@ -54,7 +55,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FooterComponent,
     ProfileComponent,
     ProductCategoriesComponent,
-    ProductListComponent
+    ProductListComponent,
+    MoreFoodComponent
     ],
   imports: [
     BrowserModule,

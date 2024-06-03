@@ -25,7 +25,7 @@ export class ShoppingCartComponent implements OnInit {
   loadCart(): void {
     const cartItems = JSON.parse(localStorage.getItem('cartItems') || '[]');
     this.items = cartItems;
-    //this.items = this.shoppingCartService.getItems();
+    this.items = this.shoppingCartService.getItems();
     this.totalQuantity = this.shoppingCartService.getTotalQuantity();
     this.totalPrice = this.shoppingCartService.getTotalPrice(); 
   }
@@ -56,6 +56,7 @@ export class ShoppingCartComponent implements OnInit {
   
   decrementOrRemove(itemId: number): void {
     this.shoppingCartService.decrementOrRemove(itemId);
+
     this.loadCart();
   }
 

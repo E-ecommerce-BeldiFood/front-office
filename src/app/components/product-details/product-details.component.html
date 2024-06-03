@@ -1,1 +1,48 @@
-<p>product-details works!</p>
+<app-navbar></app-navbar>
+
+<!-- Product Details Header -->
+<header class="bg-gradient-to-r from-yellow-300 to-yellow-300 dark:from-yellow-300 dark:to-yellow-700    pt-6">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
+        <h1 class="text-3xl font-extrabold leading-tight text-gray-800 ">Product Details</h1>
+    </div>
+</header>
+<!-- Product Information -->
+<section class="py-6 bg-gray-50 dark:bg-gray-900">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6 sm:flex sm:space-x-8">
+                <div class="sm:flex-shrink-0">
+                    <img [src]="product.imageUrl" alt="{{ product.name }}"
+                        class="w-full sm:w-72 h-72 rounded-lg object-cover shadow-lg transition-transform duration-300 ease-in-out hover:scale-105" />
+                </div>
+                <div class="mt-6 sm:mt-0 flex-1 min-w-0">
+                    <h1 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">{{ product.name }}</h1>
+                    <p class="text-base text-gray-700 dark:text-gray-300 mb-4">{{ product.description }}</p>
+                    <p class="text-2xl font-semibold text-yellow-300 mb-4">{{ product.price }} DH</p>
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-700 dark:text-gray-300">{{ product.subcategoryName }}</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="text-sm font-medium text-gray-500 dark:text-gray-400">Preparation Time:       </span>
+                        <span class="text-sm text-gray-700 dark:text-gray-300">{{ product.timeToPrepareInMinute }} minutes</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="text-sm text-gray-700 dark:text-gray-300">{{ product.status }}</span>
+                    </div>
+                    <div class="mt-6 flex items-center space-x-4">
+                        <div class="flex items-center border rounded-lg overflow-hidden quantity-control">
+                            <button (click)="decrementQuantity()" class="cursor-pointer px-4 py-2 text-lg font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200">-</button>
+                            <input class="h-10 w-12 border-none bg-white text-center text-sm outline-none" type="number" [(ngModel)]="quantity" min="1" />
+                            <button (click)="incrementQuantity()" class="cursor-pointer px-4 py-2 text-lg font-semibold text-gray-600 bg-gray-100 hover:bg-gray-200">+</button>
+                        </div>
+                        <button (click)="addToCart()" type="button" class="inline-block px-6 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-yellow-300 hover:bg-yellow-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-yellow-500">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<app-footer></app-footer>

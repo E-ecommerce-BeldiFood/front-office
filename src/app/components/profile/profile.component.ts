@@ -40,41 +40,7 @@ export class ProfileComponent implements OnInit {
     this.isEditing = true;
   }
 
- /* saveChanges() {
-    const accessToken = localStorage.getItem('accessToken'); // Assuming access token is stored as 'accessToken'
-    if (!accessToken) {
-      // Handle missing access token
-      this.toastr.error('Authentication token missing. Please log in again.', 'Error');
-      //this.router.navigate(['/Login']); // Redirect to login page
-      return;
-    }
-  
-    // Include access token in request headers
-    const headers = { 'Authorization': `Bearer ${accessToken}` };
-  
-    this.userService.updateUser(this.userData).subscribe(
-      response => {
-        if (response) {
-          //localStorage.setItem('UserInfo', JSON.stringify(this.userData));
-          this.toastr.success('Profile updated successfully!', 'Success');
-          this.isEditing = false;
-        } else {
-          this.toastr.error('Failed to update profile.', 'Error');
-        }
-      },
-      error => {
-        if (error.status === 401) {
-          // Handle 401 Unauthorized error
-          this.toastr.error('Unauthorized. Please log in again.', 'Error');
-         // this.router.navigate(['#']); // Redirect to login page
-        } else {
-          // Handle other errors
-          this.toastr.error('An error occurred while updating the profile.', 'Error');
-        }
-      }
-    );
-  }*/
-
+ 
   saveChanges() {
     this.userService.updateUser(this.userData).subscribe(
       response => {
@@ -91,7 +57,7 @@ export class ProfileComponent implements OnInit {
         if (error.status === 401) {
           // Handle 401 Unauthorized error
           this.toastr.error('Unauthorized. Please log in again.', 'Error');
-         // this.router.navigate(['/Login']); // Redirect to login page
+          this.router.navigate(['/Login']); // Redirect to login page
         } else {
           // Handle other errors
           this.toastr.error('An error occurred while updating the profile.', 'Error');
