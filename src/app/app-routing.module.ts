@@ -8,6 +8,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { MoreFoodComponent } from './components/more-food/more-food.component';
+import { SendResetPasswordComponent } from './components/send-reset-password/send-reset-password.component';
 
 /*children: [{
     
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'Login', component: LoginComponent },
 
   {path:'Register', component: RegisterComponent},
-  {path:'ResetPassword', component: ResetPasswordComponent },
+  {path:'SendResetPassword', component: SendResetPasswordComponent },
+  {path:'ResetPassword', component: ResetPasswordComponent},
   {path:'Profile', component: ProfileComponent},
   {path:'Cart', component: ShoppingCartComponent},
   {path:'ProductDetails/:id', component: ProductDetailsComponent},

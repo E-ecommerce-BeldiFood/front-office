@@ -6,23 +6,34 @@ import { ProductDtoResponse } from '../models/product-dto-response.model';
 import { CategoryResponseDto } from '../models/CategoryResponseDto';
 import { ProductDtoRequest } from '../models/product-dto-request.model';
 import { Page } from '../models/page.model';
-
-
+import { Subcategory } from '../models/Subcategory';
 
 
 @Injectable({
   providedIn: 'root'
 })
-
 export class ProductService {
   private apiUrl = environment.apiUrl;
   private productApiUrl = `${environment.apiUrl}/products`;
+
   constructor(private http: HttpClient) {}
 
+  // Category methods
   getCategories(): Observable<CategoryResponseDto[]> {
     return this.http.get<CategoryResponseDto[]>(`${this.apiUrl}/categories`);
   }
-  
+
+  // Subcategory methods
+  getAllSubcategories(): Observable<Subcategory[]> {
+    return this.http.get<Subcategory[]>(`${this.apiUrl}/subcategories`);
+  }
+
+  searchSubcategories(name: string): Observable<Subcategory[]> {
+    let params = new HttpParams().set('name', name);
+    return this.http.get<Subcategory[]>(`${this.apiUrl}/subcategories/search`, { params });
+  }
+
+  // Product methods
   getAllProducts(): Observable<ProductDtoResponse[]> {
     return this.http.get<ProductDtoResponse[]>(`${this.apiUrl}/products`);
   }
@@ -35,7 +46,6 @@ export class ProductService {
     const formData = new FormData();
     formData.append('product', JSON.stringify(productDtoRequest));
     formData.append('productImage', productImage);
-
     return this.http.post<ProductDtoResponse>(this.productApiUrl, formData);
   }
 
@@ -43,13 +53,10 @@ export class ProductService {
     return this.http.get<ProductDtoResponse>(`${this.productApiUrl}/${id}`);
   }
 
-
-
   updateProduct(id: number, productDtoRequest: ProductDtoRequest, productImage: File): Observable<ProductDtoResponse> {
     const formData = new FormData();
     formData.append('product', JSON.stringify(productDtoRequest));
     formData.append('productImage', productImage);
-
     return this.http.put<ProductDtoResponse>(`${this.productApiUrl}/${id}`, formData);
   }
 
@@ -86,7 +93,6 @@ export class ProductService {
       .set('order', order);
     return this.http.get<Page<ProductDtoResponse>>(`${this.productApiUrl}/pagination`, { params });
   }
-
 }
 export { CategoryResponseDto };
 

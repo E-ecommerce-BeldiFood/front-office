@@ -29,6 +29,7 @@ import { AuthInterceptor } from './interceptors/auth-interceptor.interceptor.spe
 import { UserServiceService } from './services/user-service.service';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MoreFoodComponent } from './components/more-food/more-food.component';
+import { SendResetPasswordComponent } from './components/send-reset-password/send-reset-password.component';
 
 
 
@@ -56,7 +57,8 @@ import { MoreFoodComponent } from './components/more-food/more-food.component';
     ProfileComponent,
     ProductCategoriesComponent,
     ProductListComponent,
-    MoreFoodComponent
+    MoreFoodComponent,
+    SendResetPasswordComponent
     ],
   imports: [
     BrowserModule,
@@ -65,9 +67,14 @@ import { MoreFoodComponent } from './components/more-food/more-food.component';
     FontAwesomeModule,
     HttpClientModule,
     FormsModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule,
     NgbModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 5000, // default timeout
+      closeButton: true, // default close button
+      progressBar: true, // default progress bar
+      preventDuplicates: true, // prevent duplicate toasts
+    }), // ToastrModule added
     
 
   ],
